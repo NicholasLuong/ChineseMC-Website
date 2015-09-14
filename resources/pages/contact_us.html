@@ -9,9 +9,30 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
-    <script src="js/main.js"></script>
+    <script src="../../js/main.js"></script>
+
+    <?php
+        if(isset($_POST['submit'])){
+            $to = "nicholaskluong@gmail.com"; // this is your Email address
+            $from = $_POST['email']; // this is the sender's Email address
+            $first_name = $_POST['first_name'];
+            $last_name = $_POST['last_name'];
+            $subject = "Form submission";
+            $subject2 = "Copy of your form submission";
+            $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+            $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+            $headers = "From:" . $from;
+            $headers2 = "From:" . $to;
+            mail($to,$subject,$message,$headers);
+            mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+
+            // You can also use header('Location: thank_you.php'); to redirect to another page.
+        }
+    ?>
+
 </head>
 <body>
     <div class="row">
@@ -35,43 +56,24 @@
                     <li><a href="#">Music</a></li>
                     <li><a href="#">Feedback</a></li>
                     <li><a href="#">Pricing</a></li>
-                    <li><a href="resources/pages/contact_us.html">Contact Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
             <div class=""></div>
         </div>
     </nav>
-    <!-- end of header and bav -->
-    <img src="img/background_header.jpg" width="100%" id="header-image">
-    <div class="row">
-        <br>
-        <div class="col-xs-0 col-md-0 col-lg-4"></div>
-        <div class="col-xs-12 col-md-12 col-lg-4">
-            <h1>
-                Master of Ceremony
-            </h1>
-        </div>
-        <div class="col-xs-0 col-md-0 col-lg-4"></div>
-    </div>
-    <div class="row">
-        <div class="col-xs-0 col-md-0 col-lg-2"></div>
-        <div class="col-xs-0 col-md-0 col-lg-8">
-            <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1">
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-summary">
-                <h3>
-                    ChineseMC.com is a professional MC/DJ service with over ten
-                    years of experience.  We specialize in Chinese-American
-                    weddings and are well know throughout the Chinese community
-                    in New York City. We offer a variety of packages, designed
-                    to meet your personal needs and budget. Our skilled MC's and
-                    DJ's will work with you to ensure that your event runs smoothly
-                    and is a memorable experience for you and your guests.
-                </h3>
-            </div>
-        </div>
-        <div class="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
-    </div>
+    <!-- End of Header and Music -->
+    <form action="" method="post">
+        First Name: <input type="text" name="first_name"><br>
+        Last Name: <input type="text" name="last_name"><br>
+        Phone Number: <input type="text" name="phone"><br>
+        Event Date: <input type="text" name="phone"><br>
+        Email: <input type="text" name="email"><br>
+        Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+
     <!-- Footer -->
     <div class="row">
         <div class="col-xs-0 col-md-0 col-lg-2"></div>

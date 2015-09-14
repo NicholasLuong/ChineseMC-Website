@@ -13,37 +13,98 @@
 }
 body{
     font-family: helvetica;
+    margin: 1% 10%;
+    border: 2px solid #CBCBCB;
 }
 .row{
     width: 100%;
-
+    margin: 0 0%;
 }
 h1{
     text-align: center;
-    font-family: roboto thin;
+    font-family: roboto Light;
 }
+h3{
+    font-family: roboto thin ;
 
+}
+.header-text{
+    font-family: pacifico;
+    font-size: 400%;
+}
 .brand-style{
     font-family: pacifico;
     font-size: 150%;
+}
+.navbar{
+    border-radius: 0;
+    float: none;
+    width: 100%;
+}
+.navbar-header{
+    padding: 0 40%;
 
 }
 .nav-style{
     background-color: rgba(255,255,255,0.0);   /* 70% opaque */
-    position: absolute;
+    margin-bottom: 0%;
     z-index: 1000;
     width: 100%;
+    border: none;
+    box-shadow: none;
 }
-
+.navbar-nav{
+    float: none;
+}
 .navbutton-style{
     background-color: rgba(255,255,255,0.0);
+    width: 100%;
+    float: none;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+.navbar-toggle{
+    float: none;
+    margin: 0 auto;
+}
+#buttonshut{
+    border: none;
+    flaot: left;
+    margin: 0;
+    width: auto;
+    text-align:center
+
+}
+#buttonshut:hover{
+    background-color: transparent;
 
 }
 li{
     background-color: rgba(255,255,255,0.0)  !important;
     border-radius: 100px;
+    margin-left: auto;
 
 }
+@media (min-width: 768px){
+    .navbar-nav>li {
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+
+    }
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
+
 .navbutton-style > li > a{
     font-size: 120%;
     color: rgba(34,34,34,1);
@@ -57,5 +118,19 @@ li{
     height: 100%;
 }
 .col-img{
+    display: block;
     float: left;
+}
+.col-summary{
+    text-align: center;
+}
+
+
+
+
+
+.footer-text{
+    text-align: center;
+    font-family: roboto Light;
+    font-size: 100%;
 }
