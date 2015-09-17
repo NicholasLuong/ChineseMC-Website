@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -11,32 +12,38 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../css/main.css">
     <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" type="text/css">
     <script src="../../js/main.js"></script>
 
     <?php
-        if(isset($_POST['submit'])){
-            $to = "nicholaskluong@gmail.com"; // this is your Email address
-            $from = $_POST['email']; // this is the sender's Email address
-            $first_name = $_POST['first_name'];
-            $last_name = $_POST['last_name'];
-            $subject = "Form submission";
-            $subject2 = "Copy of your form submission";
-            $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
-            $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+    if(isset($_POST['submit'])){
+        $to = "nicholaskluong@gmail.com"; // this is your Email address
+        $from = $_POST['email']; // this is the sender's Email address
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $phone = $_POST['phone'];
+        $date = $_POST['date'];
+        $place = $_POST['place'];
+        $subject = "Form submission";
+        $subject2 = "Copy of your form submission";
+        $message = $first_name . " " . $last_name . "\n" . "Phone: " . $phone . "\n" . "Event Date: " . $date . "\n" . "Event Place: " . $place . "\n" . "wrote the following:" . "\n\n" . $_POST['message'];
+        $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
 
-            $headers = "From:" . $from;
-            $headers2 = "From:" . $to;
-            mail($to,$subject,$message,$headers);
-            mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+        $headers = "From:" . $from;
+        $headers2 = "From:" . $to;
+        mail($to,$subject,$message,$headers);
+        mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
 
-            // You can also use header('Location: thank_you.php'); to redirect to another page.
-        }
+        // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
     ?>
 
 </head>
 <body>
     <div class="row">
-        <h1 class="header-text"> Chinese MC </h1>
+        <a href="/index.html">
+            <h1 class="header-text"> Chinese MC </h1>
+        </a>
     </div>
     <nav class="navbar navbar-default nav-style" >
         <div class="container-fluid">
@@ -55,23 +62,74 @@
                     <li><a href="#">MC</a></li>
                     <li><a href="#">Music</a></li>
                     <li><a href="#">Praise</a></li>
-                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Packages</a></li>
                     <li><a href="resources/pages/contact_us.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class=""></div>
         </div>
     </nav>
-    <!-- End of Header and Music -->
-    <form action="" method="post">
-        First Name: <input type="text" name="first_name"><br>
-        Last Name: <input type="text" name="last_name"><br>
-        Phone Number: <input type="text" name="phone"><br>
-        Event Date: <input type="text" name="phone"><br>
-        Email: <input type="text" name="email"><br>
-        Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
-        <input type="submit" name="submit" value="Submit">
-    </form>
+    <!-- End of Header and Nav -->
+    <br>
+    <div class="row">
+        <div class="col-xs-0 col-md-12 col-lg-0" ></div>
+        <div class="col-xs-12 col-md-6 col-lg-6">
+            <form action="" method="post">
+
+                First Name: <br> <input type="text" class="text-box" name="first_name"><br><br>
+                Last Name:<br> <input type="text" class="text-box" name="last_name"><br><br>
+                Phone Number: <br><input type="text" class="text-box" name="phone"><br><br>
+                Event Date:<br> <input type="text" class="text-box" name="date"><br><br>
+                Event Place:<br> <input type="text" class="text-box" name="place"><br><br>
+                Email:<br> <input type="text" class="text-box" name="email"><br><br>
+                Message:<br><textarea rows="5" class="text-box" name="message" cols="30"></textarea><br><br>
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            <h3>
+                Pricing
+            </h3>
+            <hr>
+            <p>
+                Our Pricing <br>
+                (New York Tri- State only)<br>
+                1. Basic Package - DJ only: $880<br>
+                2. Basic Package - DJ+MC: $1,280<br>
+                3. Deluxe Package -  DJ+MC: $1,680 <br>
+                4. V.I.P. Package - DJ+MC:  $2,280 <br>
+                <a href="package.html"> <p> View the packages <span class="glyphicon glyphicon-chevron-right"></span></p></a>
+
+                <br>
+                Additional Professional Services<br>
+                Photo Booth (Contact us)<br>
+                Photographers (Contact us)<br>
+                Videographers (Contact us)<br>
+                Dancer (1): $350 (2 parts)<br>
+                Dancer (Group 2-3): $600 (2 parts)<br>
+                Singer $350 (Below 10 songs)<br>
+                Magician $400 (2 parts)<br>
+                Live Band+ 1 Singer: $1500 + up<br>
+            </p>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            <h3>
+                Contact Info
+            </h3>
+            <hr>
+            <p>
+                Entertainment Director:<br>
+                Ray: 1(917) 470- 8700<br>
+                E-mail: ChineseMC@Gmail.com<br><br>
+                中文資訊(廣東話/普通話) <br>
+                Sound Engineer/CEO<br>
+                Poh:1(917) 969- 3666<br>
+                E-mail: ChineseMC@me.com<br>
+            </p>
+        </div>
+
+    </div>
+
 
 
     <!-- Footer -->

@@ -7,18 +7,24 @@
     display: block;
     background-color: white;
 }
-@font-face {
-    font-family: pacifico;
-    src: url(../resources/font/Pacifico.woff);
-}
 body{
     font-family: helvetica;
     margin: 1% 10%;
     border: 2px solid #CBCBCB;
 }
+a, a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+.text-box{
+    width: 75%;
+}
 .row{
     width: 100%;
     margin: 0 0%;
+}
+textarea {
+   resize: none;
 }
 h1{
     text-align: center;
@@ -29,11 +35,11 @@ h3{
 
 }
 .header-text{
-    font-family: pacifico;
+    font-family: 'Courgette', cursive;
     font-size: 400%;
 }
 .brand-style{
-    font-family: pacifico;
+    font-family: 'Courgette', cursive;
     font-size: 150%;
 }
 .navbar{
@@ -60,7 +66,7 @@ h3{
     background-color: rgba(255,255,255,0.0);
     width: 100%;
     float: none;
-    
+
 }
 
 .navbar .navbar-nav {
@@ -87,6 +93,11 @@ h3{
 #buttonshut:hover{
     background-color: transparent;
 
+}
+.main-praise{
+
+    padding: 1%;
+    box-shadow: 1px 1px 5px #858585;
 }
 li{
     background-color: rgba(255,255,255,0.0)  !important;
