@@ -17,7 +17,7 @@ a, a:hover{
     color: inherit;
 }
 .text-box{
-    width: 75%;
+    width: 100%;
 }
 .row{
     width: 100%;
@@ -101,7 +101,6 @@ h3{
 }
 li{
     background-color: rgba(255,255,255,0.0)  !important;
-    border-radius: 100px;
     margin-left: auto;
 
 }
@@ -116,7 +115,12 @@ li{
         text-align: center;
     }
 }
-
+.navbutton-style > li{
+    border-bottom: 1px solid rgba(255,255,255,0.0);
+}
+.navbutton-style > li:hover{
+    border-bottom: 1px solid black;
+}
 .navbutton-style > li > a{
     font-size: 120%;
     color: rgba(34,34,34,1);
